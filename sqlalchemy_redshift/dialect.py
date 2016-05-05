@@ -320,6 +320,9 @@ class RedshiftDialect(PGDialect_psycopg2):
 
     statement_compiler = RedshiftCompiler
     ddl_compiler = RedshiftDDLCompiler
+    supports_sequences = False
+    preexecute_autoincrement_sequences = False
+    postfetch_lastrowid = True
 
     construct_arguments = [
         (schema.Index, {
